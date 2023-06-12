@@ -1,0 +1,13 @@
+<div class="upload-container">
+    <h2>Uploader un fichier</h2>
+    <input type="file" (change)="onFileSelected($event)">
+    <button [disabled]="!selectedFile" (click)="uploadFile()">Uploader</button>
+    <div class="progress-container" *ngIf="uploadProgress > 0 && uploadProgress != 100">
+      <div class="progress-bar" [style.width]="uploadProgress + '%'"></div>
+      <span>{{ uploadProgress }}%</span>
+    </div>
+    <div class="finish-upload" *ngIf="uploadProgress == 100">
+        <span>File has been successfully uploaded</span>
+      </div>
+</div>
+  
